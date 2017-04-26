@@ -1,0 +1,35 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/my/my",
+    "pages/nba/nba",
+    "pages/aerial/aerial",
+    "pages/dota2/dota2",
+    "pages/note/note"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#13a0a9",
+    "navigationBarTitleText": "快与慢",
+    "navigationBarTextStyle":"white",
+    "enablePullDownRefresh": true
+  },
+  "tabBar": {
+    "selectedColor": "#13a0a9",
+    "list": [{
+      "pagePath": "pages/index/index",
+      "iconPath": "images/home.png",
+      "selectedIconPath": "images/home_selected.png",
+      "text": "首页"
+    }, {
+      "pagePath": "pages/my/my",
+      "iconPath": "images/my.png",
+      "selectedIconPath": "images/my_selected.png",
+      "text": "我的"
+    }]
+  },
+  "networkTimeout": {
+    "request": 10000
+  },
+  "debug": true
+}

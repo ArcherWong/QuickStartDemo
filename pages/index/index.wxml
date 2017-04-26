@@ -1,0 +1,55 @@
+<view class="home">
+  <view class="banner">
+    <swiper indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}">
+      <block wx:for="{{banners}}" wx:key="*this">
+        <swiper-item>
+          <image src="{{item}}" class="slide-image"/>
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="navbar-list">
+    <view class="column">
+      <view class="navbar-item" bindtap="goNBA">
+        <image src="../../images/nba.jpg"/>
+      </view>
+      <view class="navbar-item" bindtap="goAerial">
+        <image src="../../images/aerial.png"/>
+      </view>
+    </view>
+    <view class="column">
+      <view class="navbar-item" bindtap="goDota2">
+        <image src="../../images/dota2.jpg"/>
+      </view>
+      <view class="navbar-item" bindtap="goNote">
+        <image src="../../images/tour.png"/>
+      </view>
+    </view>
+  </view>
+  <view class="nba-games">
+    <view class="nba-game" wx:for="{{nbaGames}}" wx:key="*this">
+      <view class="game-status">
+        {{item.time}}
+      </view>
+      <view class="player1">
+        <view class="player-logo">
+          <image src="{{item.player1logo}}"></image>
+        </view>
+        <view class="player-name">
+          {{item.player1}}
+        </view>
+      </view>
+      <view class="game-score">
+        {{item.score}}
+      </view>
+      <view class="player2">
+        <view class="player-logo">
+          <image src="{{item.player2logo}}"></image>
+        </view>
+        <view class="player-name">
+          {{item.player2}}
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

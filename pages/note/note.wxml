@@ -1,0 +1,57 @@
+<view>
+  <swiper class="banner" indicator-dots="{{true}}" autoplay="{{true}}" circular="{{true}}">
+    <block wx:for="{{imgUrls}}" wx:key="*this">
+      <swiper-item>
+        <image src="{{item}}" class="slide-image"/>
+      </swiper-item>
+    </block>
+  </swiper>
+  <view class="section">
+    <form class="add-member">
+      <view>添加记录</view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">成员</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" bindinput="memberInput" placeholder="输入成员"/>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">支出</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" bindinput="outputInput" placeholder="输入支出"/>
+        </view>
+      </view>
+      <view class="weui-cell weui-cell_input">
+        <view class="weui-cell__hd">
+            <view class="weui-label">备注</view>
+        </view>
+        <view class="weui-cell__bd">
+            <input class="weui-input" bindinput="noteInput" placeholder="输入备注"/>
+        </view>
+      </view>
+      <view class="weui-btn-area">
+        <button class="weui-btn" type="primary" bindtap="addMember" form-type="reset">添加</button>
+      </view>
+    </form>
+    <view class="table">
+        <view class="tr">
+            <view class="th">姓名</view>
+            <view class="th">支出</view>
+            <view class="th">备注</view>
+            <view class="th">结算</view>
+        </view>
+        <view class="tr" wx:for="{{memberDetailList}}" wx:key="*this">
+            <view class="td">{{item.name}}</view>
+            <view class="td">{{item.output}}</view>
+            <view class="td">{{item.note}}</view>
+            <view class="td">{{item.result}}</view>
+        </view>
+    </view>
+    <button class="btn" bindtap="getResult">结算</button>
+    <button class="btn" bindtap="clearStorage">清空</button>
+  </view>
+</view>
