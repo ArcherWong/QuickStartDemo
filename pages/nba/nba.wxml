@@ -1,3 +1,6 @@
 <view class="nba">
-    暂无数据
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" polyline="{{polyline}}" markers="{{markers}}" controls="{{controls}}" bindregionchange="regionchange" bindmarkertap="markertap" bindcontroltap="controltap" show-location></map>
+  <button bindtap="setWeizhi">记录位置</button>
+  <button bindtap="getWeizhi">显示位置</button>
+  <button bindtap="getPolyline">获取路线</button>
 </view>
