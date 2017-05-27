@@ -2,7 +2,9 @@ var app = getApp();
 
 Page({
   data: {
-      movies: []
+  },
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
   },
   onLoad: function () {
     var that = this;

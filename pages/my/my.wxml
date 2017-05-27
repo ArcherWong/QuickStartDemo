@@ -7,46 +7,4 @@
             <view>{{weather.day_air_temperature}}-{{weather.night_air_temperature}}</view>
         </view>
     </view>
-    <view class="in_theaters">
-        <view class="title">
-            正在热映
-        </view>
-        <view class="content">
-            <swiper circular="{{true}}">
-                <block wx:for="{{in_theaters}}" wx:key="*this">
-                    <swiper-item>
-                        <view class="slide-item">
-                            <image src="{{item.images.medium}}" class="slide-image"/>
-                            <view class="slide-content">
-                                <view>{{item.title}}</view>
-                                <view>主演：{{item.casts[0].name + '、' + item.casts[1].name}}</view>
-                                <view>类型：{{item.genres[0] + '、' + item.genres[1]}}</view>
-                            </view>
-                        </view>
-                    </swiper-item>
-                </block>
-            </swiper>
-        </view>
-    </view>
-    <view class="coming_soon">
-        <view class="title">
-            即将上映
-        </view>
-        <view class="content">
-            <swiper circular="{{true}}">
-                <block wx:for="{{coming_soon}}" wx:key="*this">
-                    <swiper-item>
-                        <view class="slide-item">
-                            <image src="{{item.images.medium}}" class="slide-image"/>
-                            <view class="slide-content">
-                                <view>{{item.title}}</view>
-                                <view>主演：{{item.casts[0].name + '、' + item.casts[1].name}}</view>
-                                <view>类型：{{item.genres[0] + '、' + item.genres[1]}}</view>
-                            </view>
-                        </view>
-                    </swiper-item>
-                </block>
-            </swiper>
-        </view>
-    </view>
 </view>

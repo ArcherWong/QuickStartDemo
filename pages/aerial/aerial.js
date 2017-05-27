@@ -14,6 +14,9 @@ Page({
           activeIndex: e.currentTarget.id
       });
   },
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
+  },
   onLoad: function () {
     var that = this;
     wx.getSystemInfo({

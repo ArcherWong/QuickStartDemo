@@ -1,0 +1,7 @@
+<view class="nba">
+  <map id="map" longitude="{{longitude}}" latitude="{{latitude}}" polyline="{{polyline}}" markers="{{markers}}" controls="{{controls}}" bindregionchange="regionchange" bindmarkertap="markertap" bindcontroltap="controltap" show-location></map>
+  <button class="moveToLocation" bindtap="moveToLocation"></button>
+  <button class="map-button button1" bindtap="setWeizhi">记录位置</button>
+  <button class="map-button button2" bindtap="getWeizhi">显示位置</button>
+  <button class="map-button button3" bindtap="getPolyline">获取路线</button>
+</view>

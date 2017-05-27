@@ -1,15 +1,16 @@
 Page({
   data: {
     weather: {},
-    days: '',
-    in_theaters: [],
-    coming_soon: []
+    days: ''
   },
   getDay: function() {
     var meetDay = new Date(2017,1,9);
     var today = new Date();
     var days = parseInt(Math.abs(today - meetDay)/1000/60/60/24);
     return days
+  },
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
   },
   onLoad: function () {
     var that = this;
@@ -25,28 +26,6 @@ Page({
         },
         success: function(res) {
             that.setData({weather: res.data.showapi_res_body.f1});
-        }
-    });
-
-    wx.request({
-        url: 'https://api.douban.com/v2/movie/in_theaters',
-        method: 'GET',
-        header: {
-            'content-type': 'json'
-        },
-        success: function(res) {
-            that.setData({in_theaters: res.data.subjects});
-        }
-    });
-
-    wx.request({
-        url: 'https://api.douban.com/v2/movie/coming_soon',
-        method: 'GET',
-        header: {
-            'content-type': 'json'
-        },
-        success: function(res) {
-            that.setData({coming_soon: res.data.subjects});
         }
     });
   }

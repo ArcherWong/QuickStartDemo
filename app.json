@@ -1,6 +1,8 @@
 {
   "pages":[
     "pages/index/index",
+    "pages/movie/movie",
+    "pages/map/map",
     "pages/my/my",
     "pages/nba/nba",
     "pages/aerial/aerial",
@@ -22,6 +24,18 @@
       "selectedIconPath": "images/home_selected.png",
       "text": "首页"
     }, {
+      "pagePath": "pages/movie/movie",
+      "iconPath": "images/movie.png",
+      "selectedIconPath": "images/movie_selected.png",
+      "text": "电影"
+    },
+    {
+      "pagePath": "pages/map/map",
+      "iconPath": "images/map.png",
+      "selectedIconPath": "images/map_selected.png",
+      "text": "地图"
+    },
+    {
       "pagePath": "pages/my/my",
       "iconPath": "images/my.png",
       "selectedIconPath": "images/my_selected.png",

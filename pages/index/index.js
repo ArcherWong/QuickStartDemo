@@ -27,6 +27,9 @@ Page({
       url: "../note/note"
     })
   },
+  onPullDownRefresh: function () {
+    wx.stopPullDownRefresh()
+  },
   onLoad: function () {
     var that = this;
 
