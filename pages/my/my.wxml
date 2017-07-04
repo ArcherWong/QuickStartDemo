@@ -7,4 +7,24 @@
             <view>{{weather.day_air_temperature}}-{{weather.night_air_temperature}}</view>
         </view>
     </view>
+    <view class="add-todo">
+      <text>添加待办事项</text>
+      <input bindinput="todoInput" placeholder="请输入事项" />
+      <button bindtap="addTodo">添加</button>
+    </view>
+    <view>
+      待办事项
+    </view>
+    <view class="todo-list" wx:for="{{todoList}}" wx:key="*this">
+      <text>{{item}}</text>
+      <button bindtap="doneTodo" data-index="{{index}}">完成</button>
+      <button bindtap="deleteTodo" data-index="{{index}}">删除</button>
+    </view>
+    <view>
+      已完成事项
+    </view>
+    <view class="done-list" wx:for="{{doneList}}" wx:key="*this">
+      <text>{{item}}</text>
+      <button bindtap="deleteDone" data-index="{{index}}">删除</button>
+    </view>
 </view>

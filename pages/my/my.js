@@ -1,7 +1,10 @@
 Page({
   data: {
     weather: {},
-    days: ''
+    days: '',
+    todoList: [],
+    doneList: [],
+    todo: ''
   },
   getDay: function() {
     var meetDay = new Date(2017,1,9);
@@ -11,6 +14,37 @@ Page({
   },
   onPullDownRefresh: function () {
     wx.stopPullDownRefresh()
+  },
+  todoInput: function(e) {
+    this.setData({
+      todo: e.detail.value
+    });
+  },
+  addTodo: function() {
+    this.data.todoList.push(this.data.todo);
+    this.setData({
+      todoList: this.data.todoList
+    });
+  },
+  deleteTodo: function (e) {
+    this.data.todoList.splice(e.target.dataset.index, 1);
+    this.setData({
+      todoList: this.data.todoList
+    });
+  },
+  doneTodo: function (e) {
+    this.data.doneList.push(this.data.todoList[e.target.dataset.index]);
+    this.data.todoList.splice(e.target.dataset.index, 1);
+    this.setData({
+      todoList: this.data.todoList,
+      doneList: this.data.doneList
+    });
+  },
+  deleteDone: function (e) {
+    this.data.doneList.splice(e.target.dataset.index, 1);
+    this.setData({
+      doneList: this.data.doneList
+    });
   },
   onLoad: function () {
     var that = this;
